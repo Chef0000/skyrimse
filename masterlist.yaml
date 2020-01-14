@@ -988,30 +988,22 @@ groups:
 
   - name: &landscapeGroup Landscape
     description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *veryEarlyGroup ]
 
   - name: &fixesGroup Fixes & Resources
-    after: [ *addonsGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *fixesGroup ]
 
   - name: &underridesGroup Underrides
     after: [ *veryEarlyGroup ]
 
   - name: default
-    after:
-      - *earlyLoadersGroup
-      - *underridesGroup
+    after: [ *underridesGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after:
-      - default
-      - *landscapeGroup
+    after: [ default ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
