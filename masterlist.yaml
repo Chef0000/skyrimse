@@ -979,11 +979,8 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &preVeryEarlyGroup Pre Very Early (Patches/Add-ons)
-    after: [ *ccGroup ]
-
   - name: &veryEarlyGroup Very Early Loaders
-    after: [ *preVeryEarlyGroup ]
+    after: [ *ccGroup ]
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
@@ -993,26 +990,14 @@ groups:
     description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
     after: [ *floraGroup ]
 
-  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
-
   - name: &addonsGroup Add-ons & Expansions
-    after:
-      - *preAddonsGroup
-      - *veryEarlyGroup
-
-  - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
+    after: [ *veryEarlyGroup ]
 
   - name: &fixesGroup Fixes & Resources
-    after:
-      - *preFixesGroup
-      - *addonsGroup
-
-  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
+    after: [ *addonsGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after:
-      - *preEarlyGroup
-      - *fixesGroup
+    after: [ *fixesGroup ]
 
   - name: &underridesGroup Underrides
     after: [ *veryEarlyGroup ]
